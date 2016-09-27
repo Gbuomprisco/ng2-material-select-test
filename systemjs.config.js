@@ -18,7 +18,7 @@
     'app': { main: 'main.js', defaultExtension: 'js' },
     'rxjs': { defaultExtension: 'js' },
     'reflect-metadata': { defaultExtension: 'js' },
-    'Ng2Select': { defaultExtension: 'js' },
+    'Ng2SelectModule': { defaultExtension: 'js' },
     //  'ng2-material-select': { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     'moment': { main: 'moment.js', defaultExtension: 'js' },
