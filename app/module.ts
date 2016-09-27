@@ -1,35 +1,35 @@
 
-import { NgModule, ApplicationRef, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 // Ahead of Time compile
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, Http } from '@angular/http';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-import {   enableProdMode } from '@angular/core';
-import {  Ng2SelectModule, Ng2Select } from 'ng2-material-select/dist/index';
-import { XHRBackend } from "@angular/http";
-import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
-import { Test } from './lib/test';
 
-//import { Ng2Select } from 'ng2-material-select';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { Ng2SelectModule } from 'ng2-material-select';
+
+import { Component } from '@angular/core';
+
+@Component({
+	selector: 'test',
+	template: `<ng2-select [placeholder]="'Choose your framework'" 
+            [options]="options"
+            [(ngModel)]="framework">
+
+</ng2-select>`
+})
+export class Test {
+	options = ['Angular', 'React']
+	framework = 'React';
+}
+
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     Ng2SelectModule,
-    RouterModule,
-  ],
-  exports: [
-  ],
-  providers: [
   ],
   declarations: [
-    Test,
-    Ng2Select,
-  ],
-  entryComponents: [
     Test
   ],
   bootstrap: [Test]

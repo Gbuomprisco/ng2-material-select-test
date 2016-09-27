@@ -11,17 +11,21 @@
     'angular2-in-memory-web-api': '/node_modules/angular2-in-memory-web-api',
     'rxjs': '/node_modules/rxjs',
     'reflect-metadata': '/node_modules/reflect-metadata',
-    'Ng2SelectModule': '/node_modules/ng2-material-select/dist/index',
+    'ng2-material-select': '/node_modules/ng2-material-select',
+    'traceur': '/node_modules/traceur',
+    'typescript': '/node_modules/typescript'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
-    'app': { main: 'main.js', defaultExtension: 'js' },
+    'app': { main: 'main', defaultExtension: false },
     'rxjs': { defaultExtension: 'js' },
     'reflect-metadata': { defaultExtension: 'js' },
     'Ng2SelectModule': { defaultExtension: 'js' },
-    //  'ng2-material-select': { defaultExtension: 'js' },
+    'ng2-material-select': { main: 'dist/index.js', defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     'moment': { main: 'moment.js', defaultExtension: 'js' },
+    'traceur':  { main: 'bin/traceur.js', defaultExtension: 'js' },
+    'typescript':  { main: 'lib/typescript.js', defaultExtension: 'js' }
 
   };
   var ngPackageNames = [
@@ -51,7 +55,9 @@
   ngPackageNames.forEach(setPackageConfig);
   var config = {
     map: map,
-    packages: packages
+    packages: packages,
+    defaultExtension: 'ts',
+    transpiler: 'typescript'
   }
   System.config(config);
 })(this);
